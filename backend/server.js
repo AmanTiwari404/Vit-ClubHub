@@ -2,28 +2,31 @@ import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
 import connectDB from "./config/db.js";
+import authRoutes from "./routes/authRoutes.js";
 
-// Load environment variables
+// Load .env variables
 dotenv.config();
 
-// Connect to DB
+// Connect to MongoDB
 connectDB();
 
-// Initialize Express
+// Initialize express app ✅
 const app = express();
 
-// Middleware
+// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Routes placeholder
+// Routes (AFTER app is declared) ✅
+app.use("/api/auth", authRoutes);
+
+// Test route
 app.get("/", (req, res) => {
   res.send("VIT ClubHub API is running...");
 });
 
-// Port
+// Start server
 const PORT = process.env.PORT || 5000;
-
 app.listen(PORT, () => {
   console.log(`🚀 Server running on port ${PORT}`);
 });
