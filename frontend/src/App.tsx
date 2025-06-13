@@ -1,57 +1,36 @@
-import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
-import { AuthProvider } from './context/AuthContext';
-import { ProtectedRoute } from './components/ProtectedRoute';
-import { Login } from './pages/Login';
-import { Home } from './pages/Home';
-import { Category } from './pages/Category';
-import { Club } from './pages/Club';
-import { AdminDashboard } from './pages/AdminDashboard';
-import { StudentDashboard } from './pages/StudentDashboard';
-import { useAuth } from './context/AuthContext';
-
-function DashboardRouter() {
-  const { user } = useAuth();
-  
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
-
-  return user.role === 'admin' ? <AdminDashboard /> : <StudentDashboard />;
-}
+import { useState } from "react";
+import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import ClubPage from "./components/ClubPage";
+import HomePage from "./components/HomePage";
+import LoginPage from "./components/LoginPage";
+import AddEvent from "./components/AddEvent";
 
 function App() {
+  const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
+    !!localStorage.getItem("token")
+  );
+
   return (
-    <AuthProvider>
-      <Router>
-        <Routes>
-          <Route path="/login" element={<Login />} />
-          <Route
-            path="/"
-            element={
-              <ProtectedRoute>
-                <DashboardRouter />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/category/:categoryId"
-            element={
-              <ProtectedRoute allowedRoles={['student']}>
-                <Category />
-              </ProtectedRoute>
-            }
-          />
-          <Route
-            path="/club/:clubId"
-            element={
-              <ProtectedRoute allowedRoles={['student']}>
-                <Club />
-              </ProtectedRoute>
-            }
-          />
-        </Routes>
-      </Router>
-    </AuthProvider>
+    <Router>
+      <Routes>
+        <Route
+          path="/"
+          element={isAuthenticated ? <HomePage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/club/:clubName"
+          element={isAuthenticated ? <ClubPage /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/add-event"
+          element={isAuthenticated ? <AddEvent /> : <Navigate to="/login" />}
+        />
+        <Route
+          path="/login"
+          element={<LoginPage setAuth={setIsAuthenticated} />}
+        />
+      </Routes>
+    </Router>
   );
 }
 

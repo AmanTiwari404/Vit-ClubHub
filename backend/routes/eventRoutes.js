@@ -4,7 +4,6 @@ import { protect } from "../middleware/authMiddleware.js";
 
 const router = express.Router();
 
-// Only authenticated admins can create and see events
 router.post("/", protect, createEvent);
 router.get("/", protect, getClubEvents);
 
