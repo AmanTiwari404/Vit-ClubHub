@@ -16,12 +16,12 @@ Polished UI, secure backend, and full-stack scalability — designed to impress 
 <div align="center">
   <table>
     <tr>
-      <td><img src="./frontend/screenshots/Login%20Page.png" alt="Login Page" width="350"/></td>
-      <td><img src="./frontend/screenshots/Club%20Page.png" alt="Club Page" width="350"/></td>
+      <td><img src="./frontend/screenshots/LoginPage.png" alt="Login Page" width="350"/></td>
+      <td><img src="./frontend/screenshots/ClubPage.png" alt="Club Page" width="350"/></td>
     </tr>
     <tr>
-      <td><img src="./frontend/screenshots/Student%20Dashboard.png" alt="Student Dashboard" width="350"/></td>
-      <td><img src="./frontend/screenshots/Admin%20Dashboard.png" alt="Admin Dashboard" width="350"/></td>
+      <td><img src="./frontend/screenshots/StudentDashboard.png" alt="Student Dashboard" width="350"/></td>
+      <td><img src="./frontend/screenshots/AdminDashboard.png" alt="Admin Dashboard" width="350"/></td>
     </tr>
   </table>
 </div>
@@ -78,16 +78,6 @@ It provides a unified interface for **students** to explore, register, and parti
 | **Deployment** | Render (Backend), Vercel (Frontend) |
 
 ---
-Frontend (React + Vite + Tailwind)
-│
-▼
-Backend API (Express + JWT)
-│
-▼
-Database (MongoDB Atlas)
-│
-▼
-Cloud Storage (Cloudinary)
 
 
 - **Frontend:** Handles UI/UX, authentication, and API integration.  
