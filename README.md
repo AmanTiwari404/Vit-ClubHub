@@ -2,10 +2,10 @@
 
 **A modern student clubs & events platform** — centralizes club management, event creation, registrations, and analytics in a dual-portal (Student + Admin) web app built for colleges. Polished UI, role-based auth, event lifecycle, and easy deployment — designed to impress recruiters and demonstrate full-stack product thinking.
 
-![Login Page](./screenshots/login.png)
-![Club Page](./screenshots/club-page.png)
-![Student Dashboard](./screenshots/dashboard-student.png)
-![Admin Dashboard](./screenshots/dashboard-admin.png)
+![Login Page](frontend/screenshots/Login Page.png)
+![Club Page](frontend/screenshots/Club Page.png)
+![Student Dashboard](frontend/screenshots/Student Dashboard.png)
+![Admin Dashboard](frontend/screenshots/Admin Dashboard.png)
 
 ---
 
