@@ -9,7 +9,7 @@
 ---
 
 **A modern student clubs & events platform** — centralizes club management, event creation, registrations, and analytics in a dual-portal (Student + Admin) web app built for colleges.  
-Polished UI, secure backend, and full-stack scalability — designed to impress recruiters and demonstrate production-grade development skills.
+Polished UI, secure backend, and full-stack scalability.
 
 ---
 
